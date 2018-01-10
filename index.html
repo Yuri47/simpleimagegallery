@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*this class define the size of the image and when zoom will be aplicated 
+        you can choose any size for your image. if the size of your image is smaller than this propeties, the zoom is not aplicable. 
+        This class .imagem and .zoom are obrigatory.
+        
+        */
+        .imagem{
+            width: auto;
+            max-height: 400px;
+        }
+    
+       
+        
+        		.zoom {
+			display:inline-block;
+			position: relative;
+		}
+		
+		 
+		.zoom:after {
+			content:'';
+			display:block; 
+			width:33px; 
+			height:33px; 
+			position:absolute; 
+			top:0;
+			right:0;
+			 
+		}
+
+		.zoom img {
+			display: block;
+		}
+
+		.zoom img::selection { background-color: transparent; }
+        
+        
+        /* others styles */
+         .thumb {
+            width: 50px;
+            height: auto;
+        }
+        .mini {
+            margin-top: 400px;
+        }
+
+
+
+    
+    </style>
+</head>
+<body>
+    
+    
+    <!-- 
+    
+    This is html structure for plugin:
+    
+    <span class='zoom' id='ex1'>
+    <img src="image source" alt="" class="foto imagem image"  id="img">
+    </span>
+    <img src="image source" alt="" class="foto">
+    <img src="image source" alt="" class="foto">
+    <img src="image source" alt="" class="foto">
+    
+    
+    *The id 'ex1' and the class 'foto' can be any unique name.
+    *The class 'image' necessarily must have this name, or you can use any name, but modify the line 17 in js/galleryzoom.js file to name you choose.
+    *The class 'imagem' receive the css code, so, it must necessarily have this name, or you can modify in the css to name you choose.
+    
+    
+    
+    
+    
+      -->
+    
+    
+    
+    
+    
+    <span class='zoom' id='ex1'>
+    <img src="http://via.placeholder.com/1000x1000" alt="" class="foto imagem image"  id="img">
+    </span>
+    <br>
+    <div class="mini">
+    <img src="http://via.placeholder.com/350x150" alt="" class="foto thumb">
+    <img src="http://via.placeholder.com/1000x1000" alt="" class="foto thumb">
+    <img src="http://via.placeholder.com/450x450" alt="" class="foto thumb">
+    <img src="http://via.placeholder.com/950x550" alt="" class="foto thumb">
+    <img src="http://via.placeholder.com/550x950" alt="" class="foto thumb">
+    <img src="http://via.placeholder.com/100x100" alt="" class="foto thumb">
+    <img src="http://via.placeholder.com/800x450" alt="" class="foto thumb">
+    <img src="http://via.placeholder.com/2000x2000" alt="" class="foto thumb">
+    <br>
+    <img src="https://static.pexels.com/photos/14621/Warsaw-at-night-free-license-CC0.jpg" alt="" class="foto thumb">
+    <img src="https://static.pexels.com/photos/128458/pexels-photo-128458.jpeg" alt="" class="foto thumb">
+    <img src="https://blog.bufferapp.com/wp-content/uploads/2014/05/6110974997_8b0dfa13a0_b.jpg" alt="" class="foto thumb">
+    <img src="https://static.pexels.com/photos/267885/pexels-photo-267885.jpeg" alt="" class="foto thumb">
+    <img src="https://static.pexels.com/photos/11434/Life-of-Pix-free-stock-photos-sunset-sea-light-mikewilson.jpeg" alt="" class="foto thumb">
+    
+    
+    
+    </div>
+    
+    
+    
+    
+    
+ 
+    
+    
+   <!-- This plugin require two others plugins: Jquery 1.10.2 and jquery.zoom.js made by: https://github.com/jackmoore/zoom/ -->
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+	<script src='js/jquery.zoom.js'></script>
+   <script src="js/galleryzoom.js"></script>
+    
+     
+     
+    
+    <script>
+        // this way init the plugin. 
+        // #ex1 is the id of span.
+        // .foto is the class os images
+        gallery("#ex1", ".foto");
+      
+        </script>
+</body>
+</html>
